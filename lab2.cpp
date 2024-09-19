@@ -8,7 +8,7 @@ Recorder: Aayush Patel, typed down each of our ideas as well as general names fo
 
 #include <iostream>
 using namespace std;
-
+void enter_values(int &lbs, double &oz);
 void conversion(int lbs, double oz, int& kg, double& g);
 
 
@@ -23,6 +23,12 @@ int main(int argc, char* argv[])
     cout << kilograms << endl;;
 }
 
+void enter_values(int &lbs, double &oz) {
+    cout << "Please enter the number of pounds: " << endl; 
+    cin >> lbs; 
+    cout << "Please enter the number of ounces: " << endl;
+    cin >> oz; 
+} 
 
 void conversion(int lbs, double oz, int& kg, double& g)
 {
