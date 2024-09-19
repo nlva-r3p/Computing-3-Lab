@@ -9,8 +9,7 @@ Recorder: Aayush Patel, typed down each of our ideas as well as general names fo
 #include <iostream>
 using namespace std;
 
-void getWeight1(int lbs, double oz);
-void conversion(int lbs, double oz, int kg, double g);
+void conversion(int lbs, double oz, int& kg, double& g);
 
 
 
