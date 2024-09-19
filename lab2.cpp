@@ -21,12 +21,15 @@ int main(int argc, char* argv[])
 	int kilograms;
 	double grams;
 
-
+    cout << kilograms << endl;;
 }
 
 
 void conversion(int lbs, double oz, int& kg, double& g)
 {
-
-
+	double total;
+	total = lbs + (oz / 16);
+	total = total / 0.45359237;
+	kg = floor(total);
+	g = (total - floor(total)) * 1000;
 }
