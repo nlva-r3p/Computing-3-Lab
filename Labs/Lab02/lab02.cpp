@@ -43,7 +43,7 @@ void getWeight(int &lbs, double &oz) {
     cout << "Please enter the number of ounces: ";
 	while (!(cin >> oz) || oz < 0 || oz > OUNCES_IN_LBS) // make sure valid input is checked first
 	{
-		cout << "Please enter a valid number of ounces (>= 0 and < 16): " << flush;
+		cout << "Please enter a valid number of ounces (>= 0 and <= " << OUNCES_IN_LBS << "): " << flush;
 		cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		cout << "Please enter the number of ounces: "; 
