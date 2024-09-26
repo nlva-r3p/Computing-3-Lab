@@ -12,7 +12,7 @@ Recorder: Aayush Patel, typed down each of our ideas as well as general names fo
 using namespace std;
 
 void getWeight(int &lbs, double &oz);
-void convertWeight(const int lbs, const double oz, int& kg, double& g);
+void convertWeight(int lbs, double oz, int& kg, double& g);
 void outputConvertedWeight(int lbs, double oz, int kg, double g);
 
 int main(int argc, char* argv[])
