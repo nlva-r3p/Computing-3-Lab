@@ -78,11 +78,11 @@ double mass:: getMassMetricGrams() const
 	return drams;
 }
 
-void mass::setMassTroyPounds(int Tpounds) {
+void mass:: setMassTroyPounds(int Tpounds) {
     drams = Tpounds * 96; // 1 Troy pound = 96 drams
 }
 
-double mass::getMassTroyPounds() const {
+double mass:: getMassTroyPounds() const {
     return drams / 96; //  drams to Troy pounds
 }
 //.....
