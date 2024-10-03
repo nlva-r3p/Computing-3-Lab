@@ -31,5 +31,5 @@ void mass:: setMassMetricGrams(int grams)
 
 double mass:: getMassMetricGrams() const
 {
-	return drams;
+	return drams/1.7718451953125;
 }
