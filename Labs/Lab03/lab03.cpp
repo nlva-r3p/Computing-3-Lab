@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 
 			// case 1: need to do for Avoirdupois pounds. 
            // cout << "Enter mass in Avoirdupois pounds: ";
-            // cin >> inputMass;
+            // cin >> input_Mass;
 		// .......
 
 		
@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
 
 	// case 3: need to mass in grams. 
 	// cout << "Enter mass in grams: ";
-           // cin >> inputMass;
+           // cin >> input_Mass;
 	   // .......
 
 
@@ -85,3 +85,4 @@ void Mass::setMassTroyPounds(int Tpounds) {
 double Mass::getMassTroyPounds() const {
     return drams / 96; //  drams to Troy pounds
 }
+//.....
