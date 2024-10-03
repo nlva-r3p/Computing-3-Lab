@@ -52,7 +52,20 @@ int main(int argc, char* argv[])
 	   // .......
 
 
+ case 0:
+            cout << "Exiting program. Thanks for using the converter!" << endl;
+            break;
+
+        default:
+            cout << "Invalid choice. Try again." << endl;
+        }
+    } while (choice != 0);
+
+    return 0;
 }
+
+
+
 
 void mass:: setMassMetricGrams(int grams)
 {
