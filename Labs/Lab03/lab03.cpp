@@ -19,6 +19,37 @@ private:
 
 int main(int argc, char* argv[])
 {
+	Mass mass;
+	int choice;
+	int input_Mass;
+
+	do {
+		
+		cout << "Enter 1 for Avoirdupois pounds, 2 for Troy pounds, 3 for grams, or 0 to exit: ";
+		cin >> choice;
+
+		switch (choice) {
+
+			// case 1: need to do for Avoirdupois pounds. 
+           // cout << "Enter mass in Avoirdupois pounds: ";
+            // cin >> inputMass;
+		// .......
+
+		
+	Case 2:
+		cout << "Enter mass in Troy pounds: ";
+		cin >> input_Mass;
+		mass.setMassTroyPounds(input_Mass);
+		cout << fixed << setprecision(6);
+		cout << " Mass in Avoirdupois pounds: " << mass.getMassAvoirdupoisPounds() << endl;
+		cout << " Mass in Troy pounds: " << mass.getMassTroyPounds() <<endl;
+		cout << " Mass in grams: " << mass.getMassMetricGrams() << endl;
+		break;
+
+	// case 3: need to mass in grams. 
+	// cout << "Enter mass in grams: ";
+           // cin >> inputMass;
+	   // .......
 
 
 }
@@ -36,4 +67,8 @@ double mass:: getMassMetricGrams() const
 
 void Mass::setMassTroyPounds(int Tpounds) {
     drams = Tpounds * 96; // 1 Troy pound = 96 drams
+}
+
+double Mass::getMassTroyPounds() const {
+    return drams / 96; //  drams to Troy pounds
 }
