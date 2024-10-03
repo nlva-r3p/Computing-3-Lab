@@ -99,12 +99,12 @@ double Mass::getMassTroyPounds() const
 
 void Mass::setMassMetricGrams(double grams)
 {
-	drams = grams / 1.7718451953125; // 1 gram = 1/1.7718451953125 drams
+	drams = grams * 1.7718451953125; // 1 gram = 1/1.7718451953125 drams
 }
 
 double Mass::getMassMetricGrams() const
 {
-	return drams * 1.7718451953125; // drams to grams
+	return drams / 1.7718451953125; // drams to grams
 }
 
 double getValidInputs()
