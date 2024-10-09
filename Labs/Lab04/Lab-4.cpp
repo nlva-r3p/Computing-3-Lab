@@ -104,3 +104,43 @@ ostream& operator<< (ostream& out, Month m) {
 
 
 // ***** Add your Date class definition and driver program below. *****
+
+class Date {
+	
+	public:
+		friend class Month;
+
+		Month month;
+		int dayOfMonth;
+		int year;
+
+	private:
+		Date()
+		{
+			month.setMonth(1);
+			int dayOfMonth = 1;
+			int year = 2018;
+		}
+
+		Date(int m)
+		{
+			cin >> m;
+			month.setMonth(m);
+			int dayOfMonth = 1;
+			int year = 2018;
+		}
+		
+		Date(string m)
+		{
+			cin >> m;
+			month.setMonth(m);
+		}
+
+		void changeDate(int m)
+		{
+			month.setMonth(m);
+
+		}
+};
+
+
