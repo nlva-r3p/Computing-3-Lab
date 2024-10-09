@@ -10,8 +10,7 @@ class Mass
 {
 public:
 	void setMassAvoirdupoisPounds(double Apounds);
-	void setMassTroyPounds(double Tpounds);
-	void setMassMetricGrams(double grams);
+	void setMassTroyPounds(double Tpounds);abort
 	double getMassAvoirdupoisPounds() const;
 	double getMassTroyPounds() const;
 	double getMassMetricGrams() const;
