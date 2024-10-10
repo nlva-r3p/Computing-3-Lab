@@ -143,4 +143,42 @@ class Date {
 		}
 };
 
+// ..... 
 
+
+
+
+
+
+int main(int argc, char *argv[]) {
+
+	Date d1, d2(2, 1, 2018), d3("Mae", 1, 2018);
+
+	cout << "With the following declarations\n";
+	cout << "d1 == " << d1 << endl;
+	cout << "d2 == " << d2 << endl;
+	cout << "d3 == " << d3 << endl;
+
+
+    d3.setMonth(4);
+    cout << "After d3.setMonth(4):\n";
+    cout << "d3 == " << d3 << endl;
+
+    
+    Date d4(12, 31, 2018);
+    cout << "d4.outputDateAsInt(cout) outputs ";
+    d4.outputDateAsInt(cout);
+    cout << endl;
+
+    cout << "d4.outputDateAsString(cout) outputs ";
+    d4.outputDateAsString(cout);
+    cout << endl;
+
+
+    ++d4;
+    cout << "++d4 == " << d4 << endl;
+
+   return 0;
+	
+
+}
