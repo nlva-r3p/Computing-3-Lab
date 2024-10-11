@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdexcept> // used for debugging errors w/o wrong inputs
 
 using namespace std;
 
@@ -11,11 +12,11 @@ using namespace std;
 // Note that although both classes are defined in this single compilation unit (file),
 // we are not nesting the Month class in the Date class or vice versa.
 
-class Date;
+class Date; // need to declare Date for date in the friend declaration to be declared
 
 class Month {
 	friend class Date;
-    friend ostream& operator<<(ostream& out, const Date& date);
+    friend ostream& operator<<(ostream& out, const Date& date); // need to declare this in Month class because although Date is a friend of Month, Date's friend, ostream function, is not. Therefore, we have to declare it here, too, since the function attempts to access Month's private class members.
 	friend ostream& operator<< (ostream& out, const Month& m);
 
 private:
