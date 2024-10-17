@@ -56,27 +56,39 @@ void ComplexNumber::outputNumbers() {
 }
 
 std::ostream& operator<<(std::ostream& os, const ComplexNumber& number) {
+	os << number.real;
+	if (number.imaginary < 0)
+		os << number.imaginary;
+	else
+		os << '+' << number.imaginary;
+	os << 'i' << endl;
 
+	return os;
 }
 
 ComplexNumber operator+(const ComplexNumber& other) const {
-
+	return ComplexNumber(real + other.real, imaginary + other.imaginary);
 }
 
 ComplexNumber operator-(const ComplexNumber& other) const {
-
+	return ComplexNumber(real - other.real, imaginary - other.imaginary);
 }
 
 ComplexNumber operator*(const ComplexNumber& other) const {
-
+	double newReal = real * other.real - imaginary * other.imaginary;
+	double newImaginary = real * other.imaginary + imaginary * other.real;
+	return ComplexNumber(newReal, newImaginary);
 }
 
 ComplexNumber operator/(const ComplexNumber& other) const {
-
+	double denominator = other.real * other.real + other.imaginary * other.imaginary;
+	double newReal = (real * other.real + imaginary * other.imaginary) / denominator;
+	double newImaginary = (imaginary * other.real - real * other.imaginary) / denominator;
+	return ComplexNumber(newReal, newImaginary);
 }
 
 ComplexNumber operator!() const {
-	
+	return ComplexNumber(real, -imaginary);
 }
 
 int main(int argc, int* argv[]) 
