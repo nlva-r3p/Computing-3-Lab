@@ -1,37 +1,82 @@
 #include <iostream>
 
-using namespace std;
-
-class ComplexNumber
-{
-	
+class ComplexNumber {	
 public:
-	ComplexNumber() : real(0), imagine(0) {}
 
-	ComplexNumber(double r, double i) :`
-	{
-		setNumbers(r, i);
-	}
+	// constructors
+	ComplexNumber() : real(0), imaginary(0) {}
+	ComplexNumber(double r = 0.0, double i = 0.0) : real(r), imaginary(i) {}
 
+	// mutators
+	void setReal(double r); 
+	void setImaginary(double i);
 	void setNumbers(double r, double i);
-	void outputNumbers();
+
+	// accessors
+	double getReal() const;
+	double getImaginary() const;
+	void outputNumbers() const;
+
+	friend std::ostream& operator<<(std::ostream& os, const ComplexNumber& number);
+
+	ComplexNumber operator+(const ComplexNumber& other) const;
+	ComplexNumber operator-(const ComplexNumber& other) const;
+	ComplexNumber operator*(const ComplexNumber& other) const;
+	ComplexNumber operator/(const ComplexNumber& other) const;
+	ComplexNumber operator!() const;
 
 private:
 	double real;
-	double imagine;
-
+	double imaginary;
 };
 
-void ComplexNumber::setNumbers(double r, double i)
-{
+void ComplexNumber::setReal(double r) {
 	real = r;
-	imagine = i;
 }
 
-void ComplexNumber::outputNumbers()
-{
-	cout << "c1.Re() == " << real << ", c1.Im() == " << imagine;
+void ComplexNumber::setImaginary(double i) {
+	imaginary = i;
+}
 
+void ComplexNumber::setNumbers(double r, double i) {
+	real = r;
+	imaginary = i;
+}
+
+double ComplexNumber::getReal() {
+	return real;
+}
+
+double ComplexNumber::getImaginary() {
+	return imaginary;
+}
+
+void ComplexNumber::outputNumbers() {
+	cout << "c1.Re() == " << real << ", c1.Im() == " << imaginary;
+}
+
+std::ostream& operator<<(std::ostream& os, const ComplexNumber& number) {
+
+}
+
+ComplexNumber operator+(const ComplexNumber& other) const {
+
+}
+
+ComplexNumber operator-(const ComplexNumber& other) const {
+
+}
+
+ComplexNumber operator*(const ComplexNumber& other) const {
+
+}
+
+ComplexNumber operator/(const ComplexNumber& other) const {
+
+}
+
+ComplexNumber operator!() const {
+	
 }
 
 int main(int argc, int* argv[]) 
