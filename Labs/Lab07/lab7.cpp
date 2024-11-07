@@ -177,21 +177,23 @@ void BSTNode<T>::postOrderDisplay(ostream& out) const {
 
 
 int main(void) {
-  BSTNode<int> iroot(100);
-  iroot.insert(10);
-  iroot.insert(20);
+  BSTNode<int> iroot(300);
   iroot.insert(200);
-  iroot.insert(300);
+  iroot.insert(100);
+  iroot.insert(20);
+  iroot.insert(10);
   cout << "iroot == " << iroot << endl;
 
-  BSTNode<string> sroot("Sunday");
-  sroot.insert("Monday");
+  BSTNode<string> sroot("Wednesday");
   sroot.insert("Tuesday");
-  sroot.insert("Wednesday");
   sroot.insert("Thursday");
-  sroot.insert("Friday");
+  sroot.insert("Sunday");
   sroot.insert("Saturday");
+  sroot.insert("Monday");
+  sroot.insert("Friday");
   cout << "sroot == " << sroot << endl;
+
+  cout << "\nCreating irootList via iroot.listify\n" << endl;
 
   BSTNode<int> iroot4(1000);
   iroot4.insert(2000);
@@ -208,52 +210,64 @@ int main(void) {
   list<int> iroot4List;
   iroot4.listify(iroot4List);
 
-  cout<< "iroot List : "<< endl;
-  for(auto it = irootList.begin();it != irootList.end();++it)
-    {
-      cout<<*it<<endl;
-    }
-  cout<<"iroot List Reverse : "<<endl;
-  for(auto rit = irootList.rbegin();rit != irootList.rend();++rit)
-    {
-      cout<<*rit<<endl;
-    }
-  cout<<"iroot List using ranged for loop : "<<endl;
+  cout << "irootList (forward iterator) == ";
+  for(auto it = irootList.begin(); it != irootList.end(); ++it)
+  {
+    cout << *it << ' ';
+  }
+  cout << endl;
+
+  cout << "irootList (reverse iterator) == ";
+  for(auto rit = irootList.rbegin(); rit != irootList.rend(); ++rit)
+  {
+    cout << *rit << ' ';
+  }
+  cout << endl;
+
+  cout << "irootList (ranged for loop) == ";
   for(auto number :  irootList)
-    {
-      cout<<number<< " "<<endl;
-    }
+  {
+    cout << number << ' ';
+  }
+  cout << endl;
 
+  cout << "\nCreating srootList via sroot.listify\n" << endl;
 
-  cout<<"sroot using forward iterator : "<<endl;
-  for(auto it = srootList.begin();it != srootList.end();++it)
-    {
-      cout<<*it<<endl;
-    }
-  cout<<"sroot using reverse iterator : "<<endl;
-  for(auto rit = srootList.rbegin();rit != srootList.rend();++rit)
-    {
-      cout<<*rit<<endl;
-    }
-  cout<<"sroot using ranged for loop : "<<endl;
+  cout << "srootList (forward iterator) == ";
+  for(auto it = srootList.begin(); it != srootList.end(); ++it)
+  {
+    cout << *it << ' ';
+  }
+  cout << endl;
+
+  cout<<"srootList (reverse iterator) == ";
+  for(auto rit = srootList.rbegin(); rit != srootList.rend(); ++rit)
+  {
+    cout << *rit << ' ';
+  }
+  cout << endl;
+
+  cout<<"srootList (ranged for loop) == ";
   for(auto str : srootList)
-    {
-      cout<<str <<" "<<endl;
-    }
-
+  {
+    cout << str << ' ';
+  }
+  cout << endl;
   
-  cout<<"iroot4 List : "<<endl;
-  for(list<int> ::iterator it = iroot4List.begin();it != iroot4List.end();++it)
-    {
-      cout<<*it<<endl;
-    }
+  cout<<"\niroot4 == ";
+  for(auto it = iroot4List.begin(); it != iroot4List.end(); ++it)
+  {
+    cout << *it << ", ";
+  }
+  cout << endl;
+
   map<string, list<int>> mi;
-  mi.insert({"irootList", irootList});
   mi.insert({"iroot4List", iroot4List});
+  mi.insert({"irootList", irootList});
 
+  cout << "\nCreating iroot4List via iroot4.listify\n" << endl;
 
-  cout << "Contents of map<string, list<int>> mi (using ranged for loops): " << endl;
-
+  cout << "Contents of map<string, list<int>> mi (using ranged for loops) : " << endl;
   for (auto str : mi) {
     const string& key = str.first;
     const list<int>& values = str.second;
@@ -264,12 +278,12 @@ int main(void) {
     cout << endl;
 }
 
-  cout << "Using map index operator: " << endl;
+  cout << "\nUsing map index operator: " << endl;
 
-  for(auto it = mi.begin(); it != mi.end(); it++){
+  for(auto it = mi.begin(); it != mi.end(); ++it){
       const string& key = it->first;
-      cout << "mi['" << key << "'] == '";
-      for(int value : mi[key]){
+      cout << "mi[\"" << key << "\"] == ";
+      for(int value : it->second) {
           cout << value << " ";
       } 
       cout << endl;
