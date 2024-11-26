@@ -1,2 +1,2 @@
-# COMP2010R
+# Computing 3 Lab
 Repository for COMP 3 LAB.
